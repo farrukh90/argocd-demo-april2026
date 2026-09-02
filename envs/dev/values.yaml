@@ -60,20 +60,17 @@ service:
 ingress:
   enabled: true
   ingressClassName: "internal-nginx"
-
-  annotations:
+  annotations: 
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     ingress.kubernetes.io/ssl-redirect: "false"
     cert-manager.io/cluster-issuer: "letsencrypt-internal" 
-
-  path: /
-  pathType: Prefix
-
   hosts:
-    - "dev-internal-artemis.awsprojectxconsulting.net"
-
-  tls:
-    - secretName: "dev-artemis-tls"
+    - host: "dev-internal-artemis.awsprojectxconsulting.net"
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: 
+    - secretName: dev-internal-artemis-tls
       hosts:
         - "dev-internal-artemis.awsprojectxconsulting.net"
 
