@@ -70,12 +70,12 @@ ingress:
   pathType: Prefix
 
   hosts:
-    - "dev-internal-grafana.awsprojectxconsulting.net"
+    - "dev-internal-artemis.awsprojectxconsulting.net"
 
   tls:
-    - secretName: "dev-grafana-tls"
+    - secretName: "dev-artemis-tls"
       hosts:
-        - "dev-internal-grafana.awsprojectxconsulting.net"
+        - "dev-internal-artemis.awsprojectxconsulting.net"
 
 
 
